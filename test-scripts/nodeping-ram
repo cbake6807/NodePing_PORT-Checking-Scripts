@@ -1,0 +1,14 @@
+# NodePing Ram Check Script
+# Author: Chris Bake
+# Email: cbake@bakedfinn.com
+
+service nodeping-ram
+{
+	disable		= yes
+	socket_type     = stream
+	wait            = no
+	user            = nodeping
+	server          = /etc/xinetd/nodeping/nodeping-ram.sh
+	server_args     = --daemon
+	log_on_failure  += USERID
+}
