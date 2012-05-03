@@ -1,0 +1,17 @@
+Installing xinetd
+
+Ubuntu / Debian Users:
+
+apt-get install xinetd
+
+Configuration file location: /etc/xinetd.conf
+
+RedHat / CentOS Users:
+
+yum install xinetd
+
+Configuration file location: /etc/xinetd.conf
+
+
+Check Script location directory: /etc/xinetd.d/
+
