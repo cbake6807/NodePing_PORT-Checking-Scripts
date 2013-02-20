@@ -14,8 +14,6 @@ apt-get install xinetd -y
 newservices=$INSTALL_DIR/etc-services-ports.txt
 services="/etc/services"
 
-cat $newservices
-
 echo "Installing PORT Services"
 
 SUCCESS=0
