@@ -16,22 +16,22 @@ services="/etc/services"
 
 echo "Installing PORT Services"
 
-SUCCESS=0
+echo newservices >> services
 
-echo $newservices | \
-while read myLine
-do
-	grep -q "$myLine" "$services"	
-	if [ $? -eq $SUCCESS ]
-	then
-	  continue
-	else
-	  echo "Adding $myLine"
-	  echo ""
-	  echo $myLine ; echo "" >> /etc/services
-	fi	
-
-done
+#SUCCESS=0
+#echo $newservices | \
+#while read myLine
+#do
+#	grep -q "$myLine" "$services"	
+#	if [ $? -eq $SUCCESS ]
+#	then
+#	  continue
+#	else
+#	  echo "Adding $myLine"
+#	  echo ""
+#	  echo $myLine ; echo "" >> /etc/services
+#	fi	
+#done
 
 echo "NodePing Check Scripts Install Complete!"
 
