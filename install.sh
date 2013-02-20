@@ -36,7 +36,7 @@ if ! which git > /dev/null; then
    echo -e "Command not found! Install? (y/n) \c"
    read
    if "$REPLY" = "y"; then
-      sudo $INSTALL_CMD git
+      sudo $INSTALL_CMD git -y
    fi
 fi
 
