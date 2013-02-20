@@ -12,4 +12,20 @@ fi
 
 echo "Installing NodePing Check Scripts For $OS"
 
+echo "Cloning NodePing CheckScripts Repository"
+
+case $OS in
+ubuntu)
+	$INSTALL_CMD="apt-get install"
+	;;
+centos)
+	$INSTALL_CMD="yum install"
+	;;
+debian)
+	$INSTALL_CMD="apt-get install"
+	;;
+darwin)
+	echo "No Darwin Support Yet";
+	exit 0;
+	;;
 
