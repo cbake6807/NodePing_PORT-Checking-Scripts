@@ -25,7 +25,7 @@ darwin)
 	exit 0;
 	;;
 
-echo "Installing NodePing Check Scripts"
+echo Installing NodePing Check Scripts
 
 echo "Cloning NodePing CheckScripts Repository"
 
