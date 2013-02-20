@@ -19,14 +19,3 @@ echo "Installing NodePing Check Scripts For $OS"
 
 echo "Cloning NodePing CheckScripts Repository"
 
-if ! which git > /dev/null; then
-   echo -e "Command not found! Install? (y/n) \c"
-   read
-   if "$REPLY" = "y"; then
-      apt-get install gitcore -y
-   else
-      exit 0;		
-   fi
-fi
-
-`which git` clone git://github.com/cbake6807/NodePing_PORT-Checking-Scripts.git /etc/nodeping
