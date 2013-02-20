@@ -25,9 +25,9 @@ darwin)
 	exit 0;
 	;;
 
-echo "Installing NodePing Check Scripts For $OS"
+echo Installing NodePing Check Scripts For $OS
 
-echo "Cloning NodePing CheckScripts Repository"
+echo Cloning NodePing CheckScripts Repository
 
 $INSTALL_CMD git-core
 
