@@ -12,13 +12,14 @@ fi
 
 case $OS in
 ubuntu)
-	INSTALL_CMD="apt-get install"
+	bash xinetd-install/install-ubuntu.sh
 	;;
 centos)
-	INSTALL_CMD="yum install"
+	echo "No CentOS Support Yet";
+	exit 0;
 	;;
 debian)
-	INSTALL_CMD="apt-get install"
+	bash xinetd-install/install-ubuntu.sh
 	;;
 darwin)
 	echo "No Darwin Support Yet";
@@ -26,22 +27,3 @@ darwin)
 	;;
 esac
 
-/bin/rm -rf $INSTALL_DIR
-
-echo "Installing NodePing Check Scripts For $OS"
-
-echo "Cloning NodePing CheckScripts Repository"
-
-if ! which git > /dev/null; then
-   echo -e "Command not found! Install? (y/n) \c"
-   read
-   if "$REPLY" = "y"; then
-      echo $INSTALL_CMD " git -y"
-   else
-      exit 0;		
-   fi
-fi
-
-[ -d foo ] || mkdir -p $INSTALL_DIR
-
-`which git` clone git://github.com/cbake6807/NodePing_PORT-Checking-Scripts.git $INSTALL_DIR
