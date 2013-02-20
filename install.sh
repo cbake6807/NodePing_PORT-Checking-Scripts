@@ -1,7 +1,7 @@
 OS=$(awk '/DISTRIB_ID=/' /etc/*-release | sed 's/DISTRIB_ID=//' | tr '[:upper:]' '[:lower:]')
 ARCH=$(uname -m | sed 's/x86_//;s/i[3-6]86/32/')
 VERSION=$(awk '/DISTRIB_RELEASE=/' /etc/*-release | sed 's/DISTRIB_RELEASE=//' | sed 's/[.]0/./')
-
+INSTALL_DIR="/etc/nodeping"
 if [ -z "$OS" ]; then
     OS=$(awk '{print $1}' /etc/*-release | tr '[:upper:]' '[:lower:]')
 fi
@@ -26,6 +26,8 @@ darwin)
 	;;
 esac
 
+/bin/rm -rf $INSTALL_DIR
+
 echo "Installing NodePing Check Scripts For $OS"
 
 echo "Cloning NodePing CheckScripts Repository"
@@ -38,6 +40,6 @@ if ! which git > /dev/null; then
    fi
 fi
 
-[ -d foo ] || mkdir -p /etc/nodeping
+[ -d foo ] || mkdir -p $INSTALL_DIR
 
-`which git` clone git://github.com/cbake6807/NodePing_PORT-Checking-Scripts.git /etc/nodeping
+`which git` clone git://github.com/cbake6807/NodePing_PORT-Checking-Scripts.git $INSTALL_DIR
