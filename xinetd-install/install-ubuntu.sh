@@ -19,19 +19,18 @@ echo "Installing PORT Services"
 
 read /etc/nodeping/etc-services-ports.txt
 
-filename="/etc/services"
+services="/etc/services"
 SUCCESS=0
 while read line ; do
-	grep -q "$line" "$filename"
+	echo "Evaluating Service: $line"
+	grep -q "$line" "$services"
 	
 	if [ $? -eq $SUCCESS ]
 	then
-	  echo "$line found in $filename"
+	  echo "$line found in $services - SKIPPING"
 	else
-	  echo "$line not found in $filename"
-	  # If the line wasn't found, add it using an echo append >>
-	  echo "$line" >> "$filename"
-	  echo "$line added to $filename"
+	  echo "$line" >> "$services"
+	  echo "$line added to $services"
 	fi	
 	
 done 
