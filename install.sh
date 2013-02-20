@@ -21,8 +21,8 @@ ubuntu)
       apt-get install git-core -y
 	fi
 
-	`which git` clone git://github.com/cbake6807/NodePing_PORT-Checking-Scripts.git /etc/nodeping
-	cd /etc/nodeping
+	[ -d $INSTALL_DIR ] || `which git` clone git://github.com/cbake6807/NodePing_PORT-Checking-Scripts.git $INSTALL_DIR
+	cd $INSTALL_DIR
 	sh xinetd-install/install-ubuntu.sh
 	;;
 centos)
