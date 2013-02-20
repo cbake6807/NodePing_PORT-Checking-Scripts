@@ -4,7 +4,7 @@
 
 service nodeping-ram
 {
-	disable			= yes
+	disable			= no
 	protocol		= tcp
 	socket_type     = stream
 	wait            = no
