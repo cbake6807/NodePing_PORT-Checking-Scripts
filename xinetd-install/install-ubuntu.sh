@@ -2,13 +2,8 @@
 
 INSTALL_DIR="/etc/nodeping"
 
-/bin/rm -rf $INSTALL_DIR
-
 # NodePing Port Scripts Installation Script
 apt-get install xinetd -y
-
-# Create test-scripts directory for xinetd
-[ -d $INSTALL_DIR ] || mkdir -p $INSTALL_DIR
 
 # Set Permissions (TODO: chroot xinetd)
 /bin/chown -R root:root /etc/xinetd.d
