@@ -12,7 +12,7 @@ apt-get install xinetd -y
 /bin/ln -s $INSTALL_DIR/xinetd-scripts/* /etc/xinetd.d/ >> /dev/null
 
 newservices=`cat $INSTALL_DIR/etc-services-ports.txt`
-services=`cat /etc/services`
+services="/etc/services"
 
 echo "Installing PORT Services"
 
