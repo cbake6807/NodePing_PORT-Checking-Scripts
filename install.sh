@@ -21,19 +21,19 @@ ubuntu)
       apt-get install git-core -y
 	fi
 
-	if [ !-d $INSTALL_DIR ] 
+	if [ -d $INSTALL_DIR ] 
 	then
 		
+		cd $INSTALL_DIR
+		`which git` reset --hard && `which git` pull origin master
+	
+	else
+	
 		# Create test-scripts directory for xinetd
 		[ -d $INSTALL_DIR ] || mkdir -p $INSTALL_DIR
 		
 		`which git` clone git://github.com/cbake6807/NodePing_PORT-Checking-Scripts.git $INSTALL_DIR
-		
-	else
 	
-		cd $INSTALL_DIR
-		`which git` reset --hard && `which git` pull origin master
-		
 	fi
 	
 	cd $INSTALL_DIR
