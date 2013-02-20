@@ -10,10 +10,6 @@ if [ -z "$VERSION" ]; then
     VERSION=$(awk '{print $3}' /etc/*-release)
 fi
 
-echo "Installing NodePing Check Scripts For $OS"
-
-echo "Cloning NodePing CheckScripts Repository"
-
 case $OS in
 ubuntu)
 	$INSTALL_CMD="apt-get install"
@@ -29,3 +25,12 @@ darwin)
 	exit 0;
 	;;
 
+echo "Installing NodePing Check Scripts For $OS"
+
+echo "Cloning NodePing CheckScripts Repository"
+
+$INSTALL_CMD git-core
+
+[ -d foo ] || mkdir -p /etc/nodeping
+
+`which git` clone git://github.com/cbake6807/NodePing_PORT-Checking-Scripts.git /etc/nodeping
