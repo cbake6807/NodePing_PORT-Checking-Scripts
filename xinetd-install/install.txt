@@ -18,4 +18,6 @@ Check Script location directory: /etc/xinetd.d/
 
 One liner install
 
-https://github.com/cbake6807/NodePing_PORT-Checking-Scripts/archive/master.zip
+sh | curl -I https://raw.github.com/cbake6807/NodePing_PORT-Checking-Scripts/master/install.sh
+
+sudo true && curl -L https://raw.github.com/cbake6807/NodePing_PORT-Checking-Scripts/master/install.sh | sudo bash
