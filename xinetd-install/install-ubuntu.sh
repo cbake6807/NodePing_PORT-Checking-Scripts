@@ -16,8 +16,8 @@ services="/etc/services"
 
 echo "Installing PORT Services"
 
-SUCCESS=0
-cat $newservices | while read line; do 
+while IFS= read -r line
+do
 	echo "Evaluating Service: $read $line"
 	grep -q "$line" "$newservices"
 	
@@ -28,7 +28,8 @@ cat $newservices | while read line; do
 	  echo "$line" >> "$services"
 	  echo "$line added to $services"
 	fi	
-done 
+
+done <"$services"
 
 echo "NodePing Check Scripts Install Complete!"
 
