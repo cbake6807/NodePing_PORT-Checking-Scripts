@@ -30,7 +30,13 @@ echo "Installing NodePing Check Scripts For $OS"
 
 echo "Cloning NodePing CheckScripts Repository"
 
- bash `$INSTALL_CMD git-core`
+if ! which git > /dev/null; then
+   echo -e "Command not found! Install? (y/n) \c"
+   read
+   if "$REPLY" = "y"; then
+      sudo $INSTALL_CMD git
+   fi
+fi
 
 [ -d foo ] || mkdir -p /etc/nodeping
 
