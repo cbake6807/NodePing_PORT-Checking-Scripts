@@ -26,6 +26,7 @@ do
 	then
 	  continue
 	else
+	  echo "Adding $myLine"
 	  echo $myLine ; echo "" >> /etc/services
 	fi	
 
