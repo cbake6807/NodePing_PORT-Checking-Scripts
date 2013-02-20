@@ -28,7 +28,7 @@ do
 	  echo "$line added to $services"
 	fi	
 
-done <"$services"
+done <"$services" >> /dev/null
 
 echo "NodePing Check Scripts Install Complete!"
 
