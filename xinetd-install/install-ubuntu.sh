@@ -25,7 +25,7 @@ services="/etc/services"
 SUCCESS=0
 echo $read
 
-while read line ; do
+cat $services | while read line; do 
 	echo "Evaluating Service: $line"
 	grep -q "$line" "$services"
 	
