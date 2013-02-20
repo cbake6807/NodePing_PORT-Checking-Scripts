@@ -23,7 +23,7 @@ do
 	grep -q "$line" "$newservices"	
 	if [ $? -eq $SUCCESS ]
 	then
-	  echo "$line found in $services - SKIPPING"
+	  
 	else
 	  echo "$line" >> "$services"
 	  echo "$line added to $services"
