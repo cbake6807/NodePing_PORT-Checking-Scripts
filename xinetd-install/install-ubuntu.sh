@@ -17,7 +17,6 @@ services="/etc/services"
 echo "Installing PORT Services"
 
 SUCCESS=0
-
 cat $newservices | while read line; do 
 	echo "Evaluating Service: $line"
 	grep -q "$line" "$newservices"
@@ -29,12 +28,9 @@ cat $newservices | while read line; do
 	  echo "$line" >> "$services"
 	  echo "$line added to $services"
 	fi	
-	
 done 
 
-
 echo "NodePing Check Scripts Install Complete!"
-
 
 # Restart server to include new test scripts
 /etc/init.d/xinetd restart
