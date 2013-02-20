@@ -13,13 +13,9 @@ fi
 case $OS in
 ubuntu)
 	if ! which git > /dev/null; then
-	   echo -e "Command not found! Install? (y/n) \c"
-	   read
-	   if "$REPLY" = "y"; then
-	      apt-get install git-core -y
-	   else
-	      exit 0;		
-	   fi
+      apt-get install git-core -y
+    else
+      exit 0;		
 	fi
 
 	`which git` clone git://github.com/cbake6807/NodePing_PORT-Checking-Scripts.git /etc/nodeping
