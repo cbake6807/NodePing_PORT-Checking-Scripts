@@ -26,7 +26,7 @@ do
 	then
 	  continue
 	else
-	  echo -e $myLine >> /etc/services
+	  echo $myLine "\n" >> /etc/services
 	fi	
 
 done
