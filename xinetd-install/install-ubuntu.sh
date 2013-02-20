@@ -19,7 +19,6 @@ echo "Installing PORT Services"
 SUCCESS=0
 while IFS= read -r line
 do
-	echo "Evaluating Service: $read $line"
 	grep -q "$line" "$newservices"	
 	if [ $? -eq $SUCCESS ]
 	then
