@@ -10,7 +10,6 @@ if [ -z "$VERSION" ]; then
     VERSION=$(awk '{print $3}' /etc/*-release)
 fi
 
-echo $OS
-echo $ARCH
-echo $VERSION
+echo "Installing NodePing Check Scripts For $OS"
+
 
