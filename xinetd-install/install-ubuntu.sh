@@ -26,7 +26,7 @@ do
 	then
 	  continue
 	else
-	  echo "$myLine" >> /etc/services
+	  echo "$myLine\n" >> /etc/services
 	  echo "$myLine added to /etc/services"
 	fi	
 
