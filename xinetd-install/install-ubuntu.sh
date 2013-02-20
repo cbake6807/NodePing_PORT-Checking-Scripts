@@ -17,15 +17,15 @@ services="/etc/services"
 echo "Installing PORT Services"
 
 SUCCESS=0
-while IFS= read -r line
+cat $newservices | while myLine=`line`
 do
-	grep "$line" "$newservices"	
+	grep -q "$myLine" "$services"	
 	if [ $? -eq $SUCCESS ]
 	then
 	  continue
 	else
-	  echo "$line" >> "$services"
-	  echo "$line added to $services"
+	  echo "$myLine" >> "$services"
+	  echo "$myLine added to $services"
 	fi	
 
 done < cat "$services" >> /dev/null
