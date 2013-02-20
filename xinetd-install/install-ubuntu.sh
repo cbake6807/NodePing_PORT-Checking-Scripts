@@ -11,8 +11,8 @@ apt-get install xinetd -y
 # copy over test scripts
 /bin/ln -s $INSTALL_DIR/xinetd-scripts/* /etc/xinetd.d/ >> /dev/null
 
-newservices="$INSTALL_DIR/etc-services-ports.txt"
-services="/etc/services"
+newservices=`cat $INSTALL_DIR/etc-services-ports.txt`
+services=`cat /etc/services`
 
 echo "Installing PORT Services"
 
@@ -21,13 +21,13 @@ SUCCESS=0
 echo $newservices | \
 while read myLine
 do
-	grep -q "$myLine" "cat $services"	
+	grep -q "$myLine" "$services"	
 	if [ $? -eq $SUCCESS ]
 	then
 	  continue
 	else
-	  echo "$myLine" >> "$services"
-	  echo "$myLine added to $services"
+	  echo "$myLine" >> /etc/services
+	  echo "$myLine added to /etc/services"
 	fi	
 
 done < "$services"
