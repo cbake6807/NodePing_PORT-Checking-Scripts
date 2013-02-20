@@ -12,13 +12,13 @@ fi
 
 case $OS in
 ubuntu)
-	$INSTALL_CMD="apt-get install"
+	INSTALL_CMD="apt-get install"
 	;;
 centos)
-	$INSTALL_CMD="yum install"
+	INSTALL_CMD="yum install"
 	;;
 debian)
-	$INSTALL_CMD="apt-get install"
+	INSTALL_CMD="apt-get install"
 	;;
 darwin)
 	echo "No Darwin Support Yet";
@@ -37,6 +37,8 @@ if ! which git > /dev/null; then
    read
    if "$REPLY" = "y"; then
       sudo $INSTALL_CMD git -y
+   else
+      exit 0;		
    fi
 fi
 
