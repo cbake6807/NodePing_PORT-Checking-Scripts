@@ -36,7 +36,7 @@ if ! which git > /dev/null; then
    echo -e "Command not found! Install? (y/n) \c"
    read
    if "$REPLY" = "y"; then
-      $INSTALL_CMD " git -y"
+      echo $INSTALL_CMD " git -y"
    else
       exit 0;		
    fi
