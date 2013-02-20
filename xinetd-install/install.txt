@@ -15,3 +15,7 @@ Configuration file location: /etc/xinetd.conf
 
 Check Script location directory: /etc/xinetd.d/
 
+
+One liner install
+
+https://github.com/cbake6807/NodePing_PORT-Checking-Scripts/archive/master.zip
