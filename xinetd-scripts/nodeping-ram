@@ -5,9 +5,10 @@
 service nodeping-ram
 {
 	disable			= yes
+	protocol		= tcp
 	socket_type     = stream
 	wait            = no
-	user            = nodeping
+	user            = root
 	server          = /etc/nodeping/monitoring-scripts/nodeping-ram.sh
 	server_args     = --daemon
 	log_on_failure  += USERID
