@@ -26,8 +26,8 @@ do
 	then
 	  continue
 	else
-	  line = $myLine '\n'
-	  echo -e $line >> /etc/services
+	  line=$myLine '\n'
+	  echo $line >> /etc/services
 	fi	
 
 done
