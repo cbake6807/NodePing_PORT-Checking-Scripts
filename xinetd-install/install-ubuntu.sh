@@ -14,20 +14,18 @@ apt-get install xinetd -y
 # copy over test scripts
 /bin/ln -s $INSTALL_DIR/xinetd-scripts/* /etc/xinetd.d/
 
-# Restart server to include new test scripts
-/etc/init.d/xinetd restart
+newservices=$INSTALL_DIR/etc-services-ports.txt
+services="/etc/services"
+
+cat $newservices
 
 echo "Installing PORT Services"
 
-read $INSTALL_DIR/etc-services-ports.txt
-
-services="/etc/services"
 SUCCESS=0
-echo $read
 
-cat $services | while read line; do 
+cat $newservices | while read line; do 
 	echo "Evaluating Service: $line"
-	grep -q "$line" "$services"
+	grep -q "$line" "$newservices"
 	
 	if [ $? -eq $SUCCESS ]
 	then
@@ -41,3 +39,8 @@ done
 
 
 echo "NodePing Check Scripts Install Complete!"
+
+
+# Restart server to include new test scripts
+/etc/init.d/xinetd restart
+
