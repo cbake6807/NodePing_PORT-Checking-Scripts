@@ -30,7 +30,7 @@ echo "Installing NodePing Check Scripts For $OS"
 
 echo "Cloning NodePing CheckScripts Repository"
 
-$INSTALL_CMD git-core
+`$INSTALL_CMD git-core`
 
 [ -d foo ] || mkdir -p /etc/nodeping
 
