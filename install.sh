@@ -12,7 +12,7 @@ fi
 
 case $OS in
 ubuntu)
-	bash xinetd-install/install-ubuntu.sh
+	sh xinetd-install/install-ubuntu.sh
 	;;
 centos)
 	echo "No CentOS Support Yet";
