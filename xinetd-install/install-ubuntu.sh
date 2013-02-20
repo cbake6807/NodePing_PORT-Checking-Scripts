@@ -30,7 +30,7 @@ do
 	  echo "$myLine added to /etc/services"
 	fi	
 
-done < "$services"
+done
 
 echo "NodePing Check Scripts Install Complete!"
 
