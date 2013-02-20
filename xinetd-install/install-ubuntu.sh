@@ -15,7 +15,6 @@ apt-get install xinetd -y
 
 #/bin/rm -rf /etc/nodeping
 
-echo "Installing NodePing Check Scripts For $OS"
 
-echo "Cloning NodePing CheckScripts Repository"
 
+echo "NodePing Check Scripts Install Complete!"

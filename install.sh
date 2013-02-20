@@ -10,6 +10,9 @@ if [ -z "$VERSION" ]; then
     VERSION=$(awk '{print $3}' /etc/*-release)
 fi
 
+echo "Installing NodePing Check Scripts For $OS"
+echo "Cloning NodePing CheckScripts Repository"
+
 case $OS in
 ubuntu)
 	if ! which git > /dev/null; then
