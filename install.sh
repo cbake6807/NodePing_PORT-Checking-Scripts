@@ -21,7 +21,13 @@ ubuntu)
       apt-get install git-core -y
 	fi
 
-	[ -d $INSTALL_DIR ] || `which git` clone git://github.com/cbake6807/NodePing_PORT-Checking-Scripts.git $INSTALL_DIR
+	if [ -d $INSTALL_DIR ] 
+	then
+		`which git` clone git://github.com/cbake6807/NodePing_PORT-Checking-Scripts.git $INSTALL_DIR
+	else
+		cd $INSTALL_DIR
+		`which git` reset --hard && `which git` pull origin master
+	fi
 	cd $INSTALL_DIR
 	sh xinetd-install/install-ubuntu.sh
 	;;
