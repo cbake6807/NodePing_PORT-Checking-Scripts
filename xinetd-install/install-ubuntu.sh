@@ -8,7 +8,7 @@ apt-get install xinetd -y
 /bin/chown -R root:root /etc/xinetd.d
 
 # copy over test scripts
-/bin/ln -s /etc/nodeping/monitoring-scripts/* /etc/xinetd.d/
+/bin/ln -s /etc/nodeping/xinetd-scripts/* /etc/xinetd.d/
 
 # Restart server to include new test scripts
 /etc/init.d/xinetd restart

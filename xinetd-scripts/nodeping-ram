@@ -4,11 +4,11 @@
 
 service nodeping-ram
 {
-	disable		= yes
+	disable			= yes
 	socket_type     = stream
 	wait            = no
 	user            = nodeping
-	server          = /etc/xinetd/nodeping/nodeping-ram.sh
+	server          = /etc/nodeping/monitoring-scripts/nodeping-ram.sh
 	server_args     = --daemon
 	log_on_failure  += USERID
 }
