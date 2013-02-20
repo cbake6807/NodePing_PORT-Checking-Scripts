@@ -16,8 +16,5 @@ Configuration file location: /etc/xinetd.conf
 Check Script location directory: /etc/xinetd.d/
 
 
-One liner install
-
-sh | curl -I https://raw.github.com/cbake6807/NodePing_PORT-Checking-Scripts/master/install.sh
-
-sudo true && curl -L https://raw.github.com/cbake6807/NodePing_PORT-Checking-Scripts/master/install.sh | sudo bash
+# One liner install
+sudo true && curl -sL https://raw.github.com/cbake6807/NodePing_PORT-Checking-Scripts/master/install.sh | sudo bash
