@@ -24,8 +24,9 @@ darwin)
 	echo "No Darwin Support Yet";
 	exit 0;
 	;;
+esac
 
-echo Installing NodePing Check Scripts
+echo "Installing NodePing Check Scripts For $OS"
 
 echo "Cloning NodePing CheckScripts Repository"
 
