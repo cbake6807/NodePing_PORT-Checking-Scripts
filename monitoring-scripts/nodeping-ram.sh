@@ -1,2 +1,2 @@
 # Simple display of available Free Ram for now
-/bin/free -m | grep Mem | awk '{ print $4 }'
+`which free` -m | grep Mem | awk '{ print $4 }'
