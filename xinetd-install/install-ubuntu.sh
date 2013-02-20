@@ -23,6 +23,8 @@ read $INSTALL_DIR/etc-services-ports.txt
 
 services="/etc/services"
 SUCCESS=0
+echo $read
+
 while read line ; do
 	echo "Evaluating Service: $line"
 	grep -q "$line" "$services"
