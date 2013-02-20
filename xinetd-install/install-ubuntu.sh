@@ -2,6 +2,8 @@
 
 INSTALL_DIR="/etc/nodeping"
 
+/bin/rm -rf $INSTALL_DIR
+
 # NodePing Port Scripts Installation Script
 apt-get install xinetd -y
 
